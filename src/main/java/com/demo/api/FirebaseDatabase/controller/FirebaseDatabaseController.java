@@ -33,24 +33,4 @@ public class FirebaseDatabaseController {
         return new ResponseEntity<>("OK", HttpStatus.OK);
     }
 
-    @GetMapping("/user")
-    public User getUserData(@RequestParam String name ) throws InterruptedException, ExecutionException{
-        return realtimeDatabaseService.getUserData(name);
-    }
-
-    @PostMapping("/user")
-    public String createUser(@RequestBody User user ) throws InterruptedException, ExecutionException {
-        return realtimeDatabaseService.createUser(user);
-    }
-
-    @PutMapping("/user")
-    public String updateUser(@RequestBody User user  ) throws InterruptedException, ExecutionException {
-        return realtimeDatabaseService.updateUser(user);
-    }
-
-    @DeleteMapping("/user")
-    public String deleteUser(@RequestParam String name){
-        return realtimeDatabaseService.deleteUser(name);
-    }
-
 }
